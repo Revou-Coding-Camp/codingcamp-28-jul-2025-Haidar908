@@ -11,6 +11,13 @@ body {
     color: #333;
 }
 
+/* Containers */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
 /* Styling untuk navbar */
 .navbar {
     position: fixed;
@@ -133,6 +140,154 @@ body {
     border-radius: 2px;
 }
 
+/* Content spacing untuk fixed navbar */
+main {
+    margin-top: 80px;
+    padding: 20px 0; /* Padding vertikal saja */
+}
+
+/* Demo sections */
+section {
+    min-height: 400px;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column; /* Menggunakan flexbox untuk konten vertikal */
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #eee;
+    text-align: center; /* Teks rata tengah */
+}
+
+section:nth-child(even) {
+    background: #f8f9fa;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+/* #HOME Section */
+#home {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+#home h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+}
+
+#home p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* #OUR-PROFILE Section */
+#our-profile .profile-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    text-align: left;
+}
+
+.profile-text {
+    max-width: 700px;
+    text-align: left;
+}
+
+.highlight {
+    font-weight: bold;
+    color: #764ba2;
+}
+
+/* #PORTFOLIO Section */
+#portfolio .portfolio-item-single {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 900px;
+}
+
+.portfolio-image-large {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-content-large {
+    text-align: left;
+}
+
+/* #MESSAGE-US Section */
+#message-us .message-us-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    width: 100%;
+}
+
+.form-container, .output-container {
+    width: 100%;
+    max-width: 450px;
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #ffc107;
+    color: #333;
+}
+
+.btn-secondary {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .navbar {
@@ -143,7 +298,9 @@ body {
         display: flex;
     }
 
+    /* Sembunyikan menu desktop */
     .navbar nav {
+        display: none;
         position: absolute;
         top: 100%;
         left: 0;
@@ -151,26 +308,20 @@ body {
         background: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(10px);
         border-top: 1px solid rgba(0, 0, 0, 0.1);
-        transform: translateY(-100%);
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
+        z-index: 900;
+        transition: transform 0.3s ease;
     }
 
+    /* Tampilkan menu mobile saat aktif */
     .navbar nav.active {
+        display: block;
         transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
     }
 
     .navbar nav ul {
         flex-direction: column;
         gap: 0;
         padding: 20px;
-    }
-
-    .navbar nav ul li {
-        width: 100%;
     }
 
     .navbar nav ul li a {
@@ -181,59 +332,36 @@ body {
         border-radius: 8px;
         margin: 5px 0;
     }
-
-    /* Mobile menu animation */
+    
+    /* Animasi tombol mobile */
     .mobile-menu-btn.active span:nth-child(1) {
         transform: rotate(-45deg) translate(-5px, 6px);
     }
-
     .mobile-menu-btn.active span:nth-child(2) {
         opacity: 0;
     }
-
     .mobile-menu-btn.active span:nth-child(3) {
         transform: rotate(45deg) translate(-5px, -6px);
     }
-}
 
-/* Content spacing untuk fixed navbar */
-main {
-    margin-top: 80px;
-    padding: 20px;
-}
+    /* Perbaikan untuk bagian Home */
+    #home h1 {
+        font-size: 2.5rem;
+    }
 
-/* Demo sections */
-section {
-    min-height: 400px;
-    padding: 60px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-bottom: 1px solid #eee;
-}
+    #home p {
+        font-size: 1rem;
+    }
 
-section:nth-child(even) {
-    background: #f8f9fa;
-}
+    /* Perbaikan untuk bagian Our Profile dan Portfolio */
+    #our-profile .profile-content,
+    #portfolio .portfolio-item-single,
+    #message-us .message-us-content {
+        flex-direction: column;
+        gap: 20px;
+    }
 
-section h2 {
-    font-size: 2.5rem;
-    text-align: center;
-    color: #333;
-}
-
-#home {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    text-align: center;
-}
-
-#home h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-}
-
-#home p {
-    font-size: 1.2rem;
-    opacity: 0.9;
+    .form-container, .output-container {
+        width: 100%;
+    }
 }

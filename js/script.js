@@ -86,3 +86,25 @@ function getUserName() {
 
 // Panggil fungsi saat halaman selesai dimuat
 document.addEventListener('DOMContentLoaded', getUserName);
+
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contact-form');
+    
+    if (form) {
+        form.addEventListener('submit', function(event) {
+            // Mencegah form untuk refresh halaman
+            event.preventDefault();
+
+            // Mendapatkan nilai dari input
+            const name = document.getElementById('inputName').value;
+            const message = document.getElementById('inputMessage').value;
+
+            // Menampilkan hasil input
+            document.getElementById('output-name').textContent = 'Nama: ' + name;
+            document.getElementById('output-message').textContent = 'Pesan: ' + message;
+            
+            // Opsional: Mereset form setelah submit
+            form.reset();
+        });
+    }
+});

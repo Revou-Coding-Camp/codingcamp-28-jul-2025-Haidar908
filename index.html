@@ -9,8 +9,8 @@
 <body>
     <header class="navbar">
         <div class="logo">
-            <img src="https://via.placeholder.com/45/ffc107/ffffff?text=P" alt="Portfolio Logo">
-            <a href="#home" class="logo-text">Portfolio</a>
+            <img src="images/Pegunungan-Kendeng.png" alt="Logo Pegunungan Kendeng">
+            <a href="#home" class="logo-text">Mohammad Haidar Nur Faiz</a>
         </div>
         
         <nav id="navbar-menu">
@@ -32,21 +32,89 @@
     <main>
         <section id="home">
             <div>
-                <h1>Hi <span id="userName"></span>, Welcome To My Portfolio Website</h1>
+                <h1>Hi <span id="userName"></span>, Welcome To Our Website</h1>
                 <p>Showcasing my journey in web development and design</p>
             </div>
         </section>
 
         <section id="our-profile">
-            <h2>About Me</h2>
+            <div class="container">
+                <div class="profile-header">
+                    <h2>Our Profile</h2>
+                    <p class="subtitle">Building digital solutions with passion, innovation, and excellence</p>
+                </div>
+
+                <div class="profile-content">
+                    <div class="profile-text">
+                        <h3>About TechInnovate Solutions</h3>
+                        <p>
+                            <span class="highlight">TechInnovate Solutions</span> adalah perusahaan teknologi yang berdedikasi untuk memberikan solusi digital terdepan bagi klien-klien kami. Didirikan pada tahun 2020, kami telah berkembang menjadi mitra terpercaya dalam transformasi digital untuk berbagai industri.
+                        </p>
+                        <p>
+                            Tim profesional kami terdiri dari <span class="highlight">developer berpengalaman</span>, desainer kreatif, dan strategis digital yang berkomitmen menghadirkan inovasi dalam setiap proyek. Kami mengkhususkan diri dalam pengembangan web, aplikasi mobile, dan sistem enterprise yang scalable dan user-friendly.
+                        </p>
+                        <p>
+                            Dengan pendekatan yang berfokus pada <span class="highlight">kualitas dan kepuasan klien</span>, kami telah berhasil menyelesaikan lebih dari 150 proyek dengan tingkat kepuasan klien mencapai 98%. Visi kami adalah menjadi pelopor dalam teknologi digital yang memberdayakan bisnis untuk mencapai potensi maksimalnya.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="portfolio">
-            <h2>My Portfolio</h2>
+            <div class="container">
+                <h2>My Portfolio</h2>
+                <p class="subtitle">A showcase of my featured project: Web Psikotes</p>
+
+                <div class="portfolio-item-single">
+                    <div class="image-container">
+                        <img src="images/soal psikotes.jpg" alt="Tampilan Halaman Soal Psikotes" class="portfolio-image-large">
+                    </div>
+                    <div class="portfolio-content-large">
+                        <h3>Web Psikotes</h3>
+                        <p>
+                            Proyek ini adalah platform web interaktif untuk melakukan tes psikologi online. 
+                            Saya membangun sistem ini dari awal, mencakup antarmuka pengguna yang intuitif, 
+                            logika backend untuk pemrosesan tes, dan sistem manajemen hasil tes yang aman.
+                        </p>
+                        <p>
+                            Fitur utama dari web ini adalah <span class="highlight">otomatisasi penilaian</span>, 
+                            di mana hasil tes dapat langsung dihitung dan ditampilkan setelah selesai. 
+                            Saya menggunakan <span class="highlight">HTML, CSS, dan JavaScript</span> untuk bagian front-end, 
+                            serta <span class="highlight">Node.js</span> untuk backend-nya.
+                        </p>
+                        <a href="#" class="btn btn-primary" target="_blank">View Demo</a>
+                        <a href="#" class="btn btn-secondary" target="_blank">Learn More</a>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="message-us">
-            <h2>Get In Touch</h2>
+            <div class="container">
+                <h2>Message Us</h2>
+                <div class="message-us-content">
+                    <div class="form-container">
+                        <form id="contact-form">
+                            <div class="form-group">
+                                <label for="inputName">Nama:</label>
+                                <input type="text" id="inputName" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputMessage">Pesan:</label>
+                                <textarea id="inputMessage" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Kirim</button>
+                        </form>
+                    </div>
+                    
+                    <div class="output-container">
+                        <h3>Hasil Input:</h3>
+                        <div id="output-name"></div>
+                        <div id="output-message"></div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
